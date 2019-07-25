@@ -270,6 +270,12 @@ function step(){
 				title = "A Small Exchange";
 				txt = "<br/> Song: I'm Hungryyy... (Kirby 64)";
 				break;
+			case 9:
+				modal.style.display = "block";
+				videoFrame.src = "tennis.mp4";
+				title = "Tennis Guy";
+				txt = "<br/> Song: Parking Lot by me!!";
+				break;
 			default:
 				modal.style.display = "none";
 				videoFrame.src = "none";
