@@ -26,7 +26,6 @@ body{
 	margin: 0; height: 100%; overflow: auto;
 	overscroll-behavior: none;
 	overscroll-behavior-y: none;
-	overflow-y: hidden;
 	
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -54,7 +53,7 @@ body{
 	text-align: center;
 }
 .footer{
-	position: absolute;
+	position: relative;
 	width: 90%;
 	z-index: 1;
 	bottom: 3%;
@@ -66,8 +65,9 @@ body{
 	width: 100%;
 }
 .main{
-	position: absolute;
+	position: relative;
 	width: 90%;
+	height: 100%;
 	left: 5%;
 	font-size: medium;
 	font-family: Helvetica, Arial, sans-serif;
@@ -128,7 +128,8 @@ body{
 	outline: none;
 }
 .itmbtn{
-	width: 20%;
+	position: absolute;
+	width: 0%;
 	height: auto;
 }
 .itmbtn:hover,

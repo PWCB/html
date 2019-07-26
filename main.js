@@ -25,13 +25,121 @@ itmi = 0,
 itmiO = 0,
 itmimax = document.querySelectorAll('.itmbtn').length,
 itmPic = document.getElementById('itmPic'),
-infoY = -2;
+infoY = -2,
+homelnk = document.getElementById('home'),
+artlnk = document.getElementById('art'),
+gameslnk = document.getElementById('games'),
+musiclnk = document.getElementById('music');
 
+//button stuff---------------------------------------------
 var btn = new Array(itmimax);
 btn = document.getElementsByClassName("itmbtn");
 
+var btnsize = 256, cat = "all", tscale = 20, scale = 0, dispBtns = 0, realitms = 8, colms = (window.innerWidth-btnsize*2)/btnsize, rows = Math.ceil(realitms/colms);
 
+var grid = new Array(itmimax);
 
+function clearGrid(){
+	realitms = 0;
+	for(i = 0; i < itmimax; i++){
+		grid[i] = -1;
+	}
+}
+
+function categorizeGrid(){
+	var ii = 0;
+	for(i = 0; i < itmimax; i++){
+		if (btn[i].alt == cat || cat == "all"){
+			grid[ii] = i;
+			ii++;
+		}
+	}
+	realitms = ii;
+	rows = Math.ceil(realitms/colms)
+}
+
+function updateBtnScale(){
+	tscale = 100/(colms+2);
+	for(i = 0; i < itmimax; i++){
+		if (grid[i] != -1){
+			btn[grid[i]].style.width = scale + "%";
+			btn[grid[i]].style.height = "auto";
+		}
+	}
+}
+
+function positionGrid(){
+	var xx = 0, yy = 0, ww, hh;
+	ww = btnsize;
+	hh = btnsize;
+	for(i = 0; i < realitms; i++){
+		btn[grid[i]].style.left = xx*ww + ww/2*(1-scale/tscale) + "px";
+		xx += 1;
+		btn[grid[i]].style.top = yy*hh + hh/2*(1-scale/tscale) + "px";
+		if (xx > colms){
+			xx = 0;
+			yy += 1;
+		}
+	}
+}
+
+function shuffle(array){
+
+	var currentIndex = realitms;//array.length;
+	var temporaryValue, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+
+};
+
+function compact(array){
+	for (i = 0; i < array.length-1; i++){
+		//if we're -1
+		if (array[i] == -1){
+			//go right until we hit a non -1
+			for (ii = i; ii < array.length-1; ii++){
+			
+			}
+		}
+	}
+	
+	return array;
+}
+
+clearGrid();
+
+homelnk.onclick = function(){
+	cat = "all";
+	dispBtns = 0;
+}
+
+artlnk.onclick = function(){
+	cat = "art";
+	dispBtns = 0;
+}
+
+gameslnk.onclick = function(){
+	cat = "gam";
+	dispBtns = 0;
+}
+
+musiclnk.onclick = function(){
+	cat = "aud";
+	dispBtns = 0;
+}
+//-----------------------------------------------------
 
 window.mobileCheck = function(){
   var check = false;
@@ -64,11 +172,13 @@ if (mobileCheck()){
 	mobile = 1;
 	header.style.fontSize = "4vw";
 	main.style.fontSize = "32px";
+	colms = (window.innerWidth-btnsize)/btnsize;
 	//side.style.width = "4%";
 }else{
 	mobile = 0;
 	header.style.fontSize = "24px";
 	main.style.fontSize = "16px";
+	colms = (window.innerWidth-btnsize*2)/btnsize;
 	//side.style.width = "16px";
 }
 
@@ -113,6 +223,7 @@ function getOrientation(){
 
 window.onorientationchange = getOrientation;
 window.onload = getOrientation;
+
 
 window.onmousedown = function(){
 	for (i = 0; i < btn.length; i++){
@@ -219,6 +330,35 @@ document.ontouchmove = function(){
 var interval = window.setInterval(step, 16);
 
 function step(){
+	//grow and shrink buttons
+	
+	//grow the buttons
+	if (dispBtns == 1 && scale < tscale){
+		scale += tscale/6;
+		//scale *= 1.5;
+		scale = clamp(scale, 0, tscale);
+		updateBtnScale();
+		positionGrid();
+	}
+	
+	//if the buttons are visible and theyre supposed to be shrunken then shrink the buttons
+	if (dispBtns == 0 && scale > 0){
+		scale -= tscale/6;
+		//scale /= 1.5;
+		scale = clamp(scale, 0, tscale);
+		updateBtnScale();
+		positionGrid();
+	}
+	
+	if (dispBtns == 0 && scale <= 0){
+		dispBtns = 1;
+		clearGrid();
+		categorizeGrid();
+		shuffle(grid);
+		console.log(grid);
+	}
+	
+	
 	if (itmi != itmiO){
 		var title = "", txt = "";
 		switch(itmi) {
@@ -317,4 +457,20 @@ function step(){
 		if (iaOn > 5){modalOverlay.style.zIndex = "0"; iaOn = 0;}else{iaOn++;}
 	}
 	
+	//item array
+	//each item in array has a number 1 through itmimax
+		//setup function
+		//cycle through buttons
+			//if type == correcttype
+				//add to item array
+		//shuffle function
+			//
+				
+		//animating
+			//close all
+				//just shrinks them
+			//do any reordering then...
+			//open all
+			//console.log(grid);
+			
 }
