@@ -36,6 +36,9 @@ musiclnk = document.getElementById('music');
 var btn = new Array(itmimax);
 btn = document.getElementsByClassName("itmbtn");
 
+var btnDiv = new Array(itmimax);
+btnDiv = document.getElementsByClassName("itmDiv");
+
 var btnsize = 256, cat = "all", tscale = 20, scale = 0, dispBtns = 0, realitms = 8, colms = (window.innerWidth-btnsize*2)/btnsize, rows = Math.ceil(realitms/colms);
 
 var grid = new Array(itmimax);
@@ -63,8 +66,8 @@ function updateBtnScale(){
 	tscale = 100/(colms+2);
 	for(i = 0; i < itmimax; i++){
 		if (grid[i] != -1){
-			btn[grid[i]].style.width = scale + "%";
-			btn[grid[i]].style.height = "auto";
+			btnDiv[grid[i]].style.width = scale + "%";
+			btnDiv[grid[i]].style.height = "auto";
 		}
 	}
 }
@@ -74,9 +77,9 @@ function positionGrid(){
 	ww = btnsize;
 	hh = btnsize;
 	for(i = 0; i < realitms; i++){
-		btn[grid[i]].style.left = xx*ww + ww/2*(1-scale/tscale) + "px";
+		btnDiv[grid[i]].style.left = xx*ww + ww/2*(1-scale/tscale) + "px";
 		xx += 1;
-		btn[grid[i]].style.top = yy*hh + hh/2*(1-scale/tscale) + "px";
+		btnDiv[grid[i]].style.top = yy*hh + hh/2*(1-scale/tscale) + "px";
 		if (xx > colms){
 			xx = 0;
 			yy += 1;
@@ -230,6 +233,12 @@ window.onmousedown = function(){
 	for (i = 0; i < btn.length; i++){
 		if (getMouseElement() == btn[i]){
 			itmi = i+1;
+			for(z = 0; z < realitms; z++){
+				if (grid[z] == itmi-1){
+					gridi = z;
+					console.log("ass: "+gridi);
+				}
+			}
 			scrollTgt = 100;
 		}
 	}
@@ -238,7 +247,7 @@ window.onmousedown = function(){
 arrowl.onclick = function(){
 	gridi--;
 	if (gridi < 0){gridi = realitms;}
-	itmi = grid[gridi-1]+1;
+	itmi = grid[gridi]+1;
 	scrollTgt = 100;
 	console.log(grid);
 	console.log("gridi: "+gridi);
@@ -246,8 +255,8 @@ arrowl.onclick = function(){
 }
 arrowr.onclick = function(){
 	gridi++;
-	if (gridi > realitms){gridi = 1;}
-	itmi = grid[gridi-1]+1;
+	if (gridi > realitms){gridi = 0;}
+	itmi = grid[gridi]+1;
 	scrollTgt = 100;
 	console.log(grid);
 	console.log("gridi: "+gridi);

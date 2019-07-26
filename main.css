@@ -128,9 +128,17 @@ body{
 	outline: none;
 }
 .itmbtn{
+	z-index: 0;
+	width: 100%;
+	height: auto;
+}
+.itmDiv{
+	z-index: 1;
 	position: absolute;
 	width: 0%;
 	height: auto;
+	border-radius: 12px;
+	overflow: hidden;
 }
 .itmbtn:hover,
 .itmbtn:focus{
