@@ -21,6 +21,7 @@ closer = document.getElementsByClassName("close")[0],
 info = document.getElementsByClassName("info")[0],
 arrowl =  document.getElementsByClassName("arrowl")[0],
 arrowr =  document.getElementsByClassName("arrowr")[0],
+gridi = 0,
 itmi = 0,
 itmiO = 0,
 itmimax = document.querySelectorAll('.itmbtn').length,
@@ -235,14 +236,22 @@ window.onmousedown = function(){
 }
 
 arrowl.onclick = function(){
-	itmi--;
-	if (itmi <= 0){itmi = itmimax;}
+	gridi--;
+	if (gridi < 0){gridi = realitms;}
+	itmi = grid[gridi-1]+1;
 	scrollTgt = 100;
+	console.log(grid);
+	console.log("gridi: "+gridi);
+	console.log("itmi: "+itmi);
 }
 arrowr.onclick = function(){
-	itmi++;
-	if (itmi > itmimax){itmi = 1;}
+	gridi++;
+	if (gridi > realitms){gridi = 1;}
+	itmi = grid[gridi-1]+1;
 	scrollTgt = 100;
+	console.log(grid);
+	console.log("gridi: "+gridi);
+	console.log("itmi: "+itmi);
 }
 
 
