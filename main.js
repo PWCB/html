@@ -65,6 +65,7 @@ var btnDiv = new Array(itmimax);
 btnDiv = document.getElementsByClassName("itmDiv");
 
 var btnsize = 256, cat = "all", tscale = 20, scale = 0, dispBtns = 0, realitms = 8, colms = (window.innerWidth-btnsize*2)/btnsize, rows = Math.ceil(realitms/colms);
+var mscale = 0, mtscale = 80;
 
 var grid = new Array(itmimax);
 
@@ -90,6 +91,16 @@ function categorizeGrid(){
 }
 
 function updateBtnScale(){
+	tscale = 100/(colms+2);
+	for(i = 0; i < itmimax; i++){
+		if (grid[i] != -1){
+			btnDiv[grid[i]].style.width = scale + "%";
+			btnDiv[grid[i]].style.height = "auto";
+		}
+	}
+}
+
+function updateModalScale(){
 	tscale = 100/(colms+2);
 	for(i = 0; i < itmimax; i++){
 		if (grid[i] != -1){
@@ -280,7 +291,7 @@ window.onmousedown = function(){
 	}
 }
 
-arrowl.onclick = function(){
+function goleft(){
 	gridi--;
 	if (gridi < 0){gridi = realitms;}
 	itmi = grid[gridi]+1;
@@ -289,7 +300,7 @@ arrowl.onclick = function(){
 	console.log("gridi: "+gridi);
 	console.log("itmi: "+itmi);
 }
-arrowr.onclick = function(){
+function goright(){
 	gridi++;
 	if (gridi > realitms){gridi = 0;}
 	itmi = grid[gridi]+1;
@@ -300,10 +311,15 @@ arrowr.onclick = function(){
 }
 
 
+arrowl.onclick = goleft;
+arrowr.onclick = goright;
+$("body").on("swipeleft",function(){goleft();});
+$("body").on("swiperight",function(){goright();});
+
 //exit
 closer.onclick = function(){
-	modal.style.display = "none";
-	contentFrame.src = "none";
+	//modal.style.display = "none";
+	//contentFrame.src = "none";
 	//contentFrame.contentWindow.postMessage('{"event":"command","func":"' + 'stopvideo' + '","args":""}', '*');
 	itmi = 0;
 	scrollTgt = 100;
@@ -320,8 +336,8 @@ info.onclick = function(){
 
 modal.onclick = function(event){
   if (event.target == modal && event.target != arrowl && event.target != arrowr && event.target != info && iaOn == 0){
-    modal.style.display = "none";
-	contentFrame.src = "none";
+    //modal.style.display = "none";
+	//contentFrame.src = "none";
 	//contentFrame.contentWindow.postMessage('{"event":"command","func":"' + 'stopvideo' + '","args":""}', '*');
 	itmi = 0;
 	scrollTgt = 100;
@@ -492,8 +508,8 @@ function step(){
 				txt = "<br/> Song: test";
 				break;
 			default:
-				modal.style.display = "none";
-				contentFrame.src = "none";
+				//modal.style.display = "none";
+				//contentFrame.src = "none";
 				modalOverlay.style.zIndex = "0";
 				//contentFrame.contentWindow.postMessage('{"event":"command","func":"' + 'stopvideo' + '","args":""}', '*');
 				itmi = 0;
@@ -516,6 +532,28 @@ function step(){
 		}
 		
 		itmiO = itmi;
+	}
+	
+	//modal content tween
+	if (itmi == 0){
+		if (mscale > 0){
+			mscale -= mtscale/10;
+			modalContent.style.width = mscale + "%";
+			modalContent.style.height = mscale + "%";
+			modalContent.style.left = 10 + 40*(1-mscale/mtscale) + "%";
+			modalContent.style.top = 10 + 40*(1-mscale/mtscale) + "%";
+		}else{
+			modal.style.display = "none";
+			contentFrame.src = "";
+		}
+	}else{
+		if (mscale < mtscale){
+			mscale += mtscale/10;
+			modalContent.style.width = mscale + "%";
+			modalContent.style.height = mscale + "%";
+			modalContent.style.left = 10 + 40*(1-mscale/mtscale) + "%";
+			modalContent.style.top = 10 + 40*(1-mscale/mtscale) + "%";
+		}
 	}
 	
 	//tween scroll
