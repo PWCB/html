@@ -52,7 +52,7 @@ for(i = 0; i < bnr.length; i++){
 			bnr[i].style.backgroundColor = "rgba(255,100,100,1.0)";
 			break;
 		case 3:
-			bnr[i].style.backgroundColor = "rgba(255,220,0,1.0)";
+			bnr[i].style.backgroundColor = "rgba(255,150,0,1.0)";
 			break;
 		case 4:
 			bnr[i].style.backgroundColor = "rgba(255,100,0,1.0)";
