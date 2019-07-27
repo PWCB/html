@@ -36,10 +36,11 @@ musiclnk = document.getElementById('music');
 var btn = new Array(itmimax);
 btn = document.getElementsByClassName("itmbtn");
 
+
 var bnr = new Array(itmimax);
 bnr = document.getElementsByClassName("itmTextBack");
 for(i = 0; i < bnr.length; i++){
-	var col = Math.floor(Math.random() * 3);
+	var col = Math.floor(Math.random() * 4);
 	switch(col){
 		case 0:
 			bnr[i].style.backgroundColor = "rgba(0,100,255,1.0)";
@@ -60,6 +61,7 @@ for(i = 0; i < bnr.length; i++){
 	//bnr[i].style.backgroundColor = "rgba(0,100,255,1.0)";
 	//bnr[i].style.backgroundColor = "rgba(255,220,0,1.0)";
 }
+
 
 var btnDiv = new Array(itmimax);
 btnDiv = document.getElementsByClassName("itmDiv");
