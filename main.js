@@ -179,10 +179,12 @@ window.mobileCheck = function(){
 };
 
 window.onresize = function(){
-	dispBtns = 0;
-	colms = (window.innerWidth-btnsize*2)/btnsize;
-	rows = Math.ceil(realitms/colms);
-	positionGrid();
+	if (!mobile){
+		dispBtns = 0;
+		colms = (window.innerWidth-btnsize*2)/btnsize;
+		rows = Math.ceil(realitms/colms);
+		positionGrid();
+	}
 }
 
 function insertText(className, txt){
