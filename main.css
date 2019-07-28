@@ -104,6 +104,7 @@ body{
 	overflow: hidden;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center; 
 }
 .modalOverlay{
 	z-index: 0;
@@ -132,9 +133,9 @@ body{
 .audioFrame{
 	z-index: 5;
 	position: absolute;
-	width: 20%;
+	width: 40%;
 	height: 55%;
-	left: 40%;
+	left: 30%;
 	overflow: hidden;
 	outline: none;
 }
@@ -150,6 +151,7 @@ body{
 }
 .itmbtn{
 	z-index: 0;
+	mix-blend-mode: luminosity;
 	width: 100%;
 	height: auto;
 }

@@ -13,6 +13,7 @@ modalOverlay = document.getElementsByClassName("modalOverlay")[0],
 fakeScroll = document.getElementsByClassName("fakeScroll")[0],
 modalInfo =  document.getElementsByClassName("modalInfo")[0],
 infoArrow =  document.getElementsByClassName("infoArrow")[0],
+modalRegular = document.getElementById('modalRegular'),
 modalTitle =  document.getElementsByClassName("modalTitle")[0],
 modalText =  document.getElementsByClassName("modalText")[0],
 scrollPos = 100,
@@ -298,18 +299,12 @@ function goleft(){
 	if (gridi < 0){gridi = realitms;}
 	itmi = grid[gridi]+1;
 	scrollTgt = 100;
-	console.log(grid);
-	console.log("gridi: "+gridi);
-	console.log("itmi: "+itmi);
 }
 function goright(){
 	gridi++;
 	if (gridi > realitms){gridi = 0;}
 	itmi = grid[gridi]+1;
 	scrollTgt = 100;
-	console.log(grid);
-	console.log("gridi: "+gridi);
-	console.log("itmi: "+itmi);
 }
 
 
@@ -433,6 +428,13 @@ function step(){
 	
 	if (itmi != itmiO){
 		var title = "", txt = "";
+		
+		contentFrame.style.display = "block";
+		modalContent.style.backgroundImage = "";
+		modalRegular.style.display = "none";
+		contentFrame.type = "";
+		contentFrame.src = "";
+		
 		switch(itmi) {
 			case 1:
 				modal.style.display = "block";
@@ -502,13 +504,119 @@ function step(){
 				break;
 			case 10:
 				modal.style.display = "block";
-				modalContent.style.backgroundImage = "url(flowers.jpg)"
+				modalRegular.style.display = "block";
 				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/donorintro.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>Donor Intro</b></div>';
 				contentFrame.type = "audio/mpeg";
-				contentFrame.src = "test.mp3";
-				title = "test song";
-				txt = "<br/> Song: test";
+				contentFrame.src = "songs/cafartic.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
 				break;
+			case 11:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/dreadandbliss.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>Dread and Bliss</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/dreadandbliss.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 12:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/nerves.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>At Dawn</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/nazare.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 13:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/parkinglot.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>Parking Lot</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/parking lot2xxxxzx.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 14:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(flowers.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>Schnuffel</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/schnuffelbunbun.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 15:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/songfromdream.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>songfromDream.mp3</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/songfromDream.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 16:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/worm.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>worm 500</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/worm500.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 17:
+				modal.style.display = "block";
+				modalRegular.style.display = "block";
+				contentFrame.className = "audioFrame";
+				modalContent.style.backgroundImage = "url(thumbs/xtald.jpg)";
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>Xtald</b></div>';
+				contentFrame.type = "audio/mpeg";
+				contentFrame.src = "songs/xtald3x.mp3";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 18:
+				modal.style.display = "block";
+				//modalRegular.style.display = "block";
+				contentFrame.className = "regularFrame";
+				//modalContent.style.backgroundImage = "url(flowers.jpg)"
+				
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
+				
+				modalRegular.style.display = "block";
+				contentFrame.style.display = "none";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+/*			case 19:
+				modal.style.display = "block";
+				//modalRegular.style.display = "block";
+				contentFrame.className = "regularFrame";
+				//modalContent.style.backgroundImage = "url(flowers.jpg)"
+				
+				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div><iframe frameborder="0" src="https://itch.io/embed/273261" width="552" height="167"></iframe>';
+				
+				modalRegular.style.display = "block";
+				contentFrame.style.display = "none";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+*/
 			default:
 				//modal.style.display = "none";
 				//contentFrame.src = "none";
@@ -521,10 +629,12 @@ function step(){
 			insertText("modalTitle", "");
 			insertText("modalText", "");
 			modalInfo.style.display = "none";
+			info.style.display = "none";
 		}else{
 			insertText("modalTitle", title);
 			insertText("modalText", txt);
 			modalInfo.style.display = "block";
+			info.style.display = "block";
 		}
 		
 		if (itmi != 0){
