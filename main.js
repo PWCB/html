@@ -1,4 +1,4 @@
-﻿// Some scaling based on wether we're mobile or not
+﻿
 var 
 mobile = 0,
 bod = document.getElementById('bod'),
