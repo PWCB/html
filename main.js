@@ -596,7 +596,20 @@ function step(){
 				contentFrame.className = "regularFrame";
 				//modalContent.style.backgroundImage = "url(flowers.jpg)"
 				
-				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
+				modalRegular.innerHTML = '<iframe frameborder="0" src="https://itch.io/embed/197155" width="552" height="167"></iframe><div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
+				
+				modalRegular.style.display = "block";
+				contentFrame.style.display = "none";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 19:
+				modal.style.display = "block";
+				//modalRegular.style.display = "block";
+				contentFrame.className = "regularFrame";
+				//modalContent.style.backgroundImage = "url(flowers.jpg)"
+				
+				modalRegular.innerHTML = '<iframe frameborder="0" src="https://itch.io/embed/293270" width="552" height="167"></iframe><div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
 				
 				modalRegular.style.display = "block";
 				contentFrame.style.display = "none";
