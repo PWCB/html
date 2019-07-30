@@ -13,6 +13,7 @@ a:active {
 a:hover {
 	color: #E0E0E0;
 	text-decoration: none;
+	cursor: pointer;
 }
 html{
 	overflow: hidden;
