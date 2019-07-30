@@ -430,6 +430,7 @@ function step(){
 		var title = "", txt = "";
 		
 		contentFrame.style.display = "block";
+		modalContent.style.overflow = "hidden";
 		modalContent.style.backgroundImage = "";
 		modalRegular.style.display = "none";
 		contentFrame.type = "";
@@ -607,7 +608,7 @@ function step(){
 				//modalRegular.style.display = "block";
 				contentFrame.className = "regularFrame";
 				//modalContent.style.backgroundImage = "url(flowers.jpg)"
-				
+				modalContent.style.overflow = "auto";
 				modalRegular.innerHTML = '<table style="width: 100%; height: 100%;"> <tr style="height: 10%;"> <th></th><th</th> </tr> <tr><th style="width: 25%;"><iframe frameborder="0" src="https://itch.io/embed/293270" width="100%" height="100%"></iframe> </th> <th style="width: 75%;"><div style="position: relative; padding: 2%; text-align: left; font-size: 1vw; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp; Donor, was going to be a game where you play as an organ donor whos consciousness was transplanted into a robotic vessel made by the mysterious underground megacorp known as Murmur. Now someone has reactivated a facility long after they were shut down and their assets liquidated and youre left to your own devices to unravel what the one who revived you had in mind.<br/>&nbsp;&nbsp;&nbsp;&nbsp; It was heavily influenced by the graphics of older games like Half-Life and Morrowind, and also adopted some aspects of those games in terms of gameplay, although it was going to be less directly structured in terms of being told what to do. I wanted to approach it in a way where the player would be able to take their curiosity anywhere at any time to bring on this fully explorative experience where you could unravel the mysteries of the world youre in as pieces that slowly form a bigger picture.<br/>&nbsp;&nbsp;&nbsp;&nbsp; Anyways it ended being a bigger project than I think I was ready for so I let it go, coming back to it now I think my sensibilites have changed to much and I also realize that Gamemaker wasnt ideal as an engine. You can still play what I had made via the link above, but as youll see theres a lot missing, and a lot of bugs.</th></tr></table><iframe id="ytVid" style="position: absolute; width: 100%; height: 70%;" src="https://www.youtube.com/embed/NhQJ11w4A8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 				
 				modalRegular.style.display = "block";
@@ -620,7 +621,7 @@ function step(){
 				//modalRegular.style.display = "block";
 				contentFrame.className = "regularFrame";
 				//modalContent.style.backgroundImage = "url(flowers.jpg)"
-				
+				modalContent.style.overflow = "auto";
 				modalRegular.innerHTML = '<table style="width: 100%; height: 100%;"> <tr style="height: 10%;"> <th></th><th</th> </tr> <tr><th style="width: 25%;"><iframe frameborder="0" src="https://itch.io/embed/273261" width="100%" height="100%"></iframe> </th> <th style="width: 75%;"><div style="position: relative; padding: 2%; text-align: left; font-size: 1vw; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp; This was a fun little diddy I did that actually originated as a running joke on OneyPlays. The idea was that Worm Odyssey is some obscure landmark in gaming history, so I wanted to make this as if it actually existed and Id found a copy in my uncles garage or something. Ended having a lot of fun designing this.</th></tr></table><iframe id="ytVid" style="position: absolute; width: 100%; height: 70%;" src="https://www.youtube.com/embed/CYE7LBGnI9E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 				
 				modalRegular.style.display = "block";
