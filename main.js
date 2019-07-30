@@ -434,6 +434,7 @@ function step(){
 		modalRegular.style.display = "none";
 		contentFrame.type = "";
 		contentFrame.src = "";
+		if (document.getElementById('ytVid')){ $('iframe').attr('src', $('iframe').attr('src'));}
 		
 		switch(itmi) {
 			case 1:
@@ -595,9 +596,7 @@ function step(){
 				//modalRegular.style.display = "block";
 				contentFrame.className = "regularFrame";
 				//modalContent.style.backgroundImage = "url(flowers.jpg)"
-				
-				modalRegular.innerHTML = '<iframe frameborder="0" src="https://itch.io/embed/197155" width="552" height="167"></iframe><div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
-				
+				modalRegular.innerHTML = '<table style="width: 100%; height: 100%;"> <tr style="height: 10%;"> <th></th><th</th> </tr> <tr><th style="width: 25%;"><iframe frameborder="0" src="https://itch.io/embed/197155"  width="100%" height="100%"></iframe> </th> <th style="width: 75%;"><div style="position: relative; padding: 2%; text-align: left; font-size: 1vw; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp; Nanima is a top-down spaceship style shooter with RPG elements that lets you assemble your vehicle from a selection of parts. For instance, in order to move you have to weld thrusters to the side of your ship and assign the keys to activate them, and you have complete control over where you want to put these. The same goes for weapons, fins, passive buff parts, shields and any structural elements you want to add. Then with that I want to design a procedurally generated world/dungeon where you take out enemies and bosses that youll have to confront with unique builds that suit the obstacle. Enemies drop more parts with different levels of rarity depending on their difficulty and you just build up from there. <br/> &nbsp;&nbsp;&nbsp;&nbsp; Progress has been slow on this on but I do plan on finishing it and hopefully get it up on Steam within a year or so. If youre interested you can play a rough version of the game on my Itch.io page.</th></tr></table><iframe id="ytVid" style="position: absolute; width: 100%; height: 70%;" src="https://www.youtube.com/embed/8hHNRBKWZks" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 				modalRegular.style.display = "block";
 				contentFrame.style.display = "none";
 				//title = "test song";
@@ -609,7 +608,20 @@ function step(){
 				contentFrame.className = "regularFrame";
 				//modalContent.style.backgroundImage = "url(flowers.jpg)"
 				
-				modalRegular.innerHTML = '<iframe frameborder="0" src="https://itch.io/embed/293270" width="552" height="167"></iframe><div style="position: absolute; padding-top: 20%; padding-left: 20%; text-align: center;"><b>howdy</b></div>';
+				modalRegular.innerHTML = '<table style="width: 100%; height: 100%;"> <tr style="height: 10%;"> <th></th><th</th> </tr> <tr><th style="width: 25%;"><iframe frameborder="0" src="https://itch.io/embed/293270" width="100%" height="100%"></iframe> </th> <th style="width: 75%;"><div style="position: relative; padding: 2%; text-align: left; font-size: 1vw; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp; Donor, was going to be a game where you play as an organ donor whos consciousness was transplanted into a robotic vessel made by the mysterious underground megacorp known as Murmur. Now someone has reactivated a facility long after they were shut down and their assets liquidated and youre left to your own devices to unravel what the one who revived you had in mind.<br/>&nbsp;&nbsp;&nbsp;&nbsp; It was heavily influenced by the graphics of older games like Half-Life and Morrowind, and also adopted some aspects of those games in terms of gameplay, although it was going to be less directly structured in terms of being told what to do. I wanted to approach it in a way where the player would be able to take their curiosity anywhere at any time to bring on this fully explorative experience where you could unravel the mysteries of the world youre in as pieces that slowly form a bigger picture.<br/>&nbsp;&nbsp;&nbsp;&nbsp; Anyways it ended being a bigger project than I think I was ready for so I let it go, coming back to it now I think my sensibilites have changed to much and I also realize that Gamemaker wasnt ideal as an engine. You can still play what I had made via the link above, but as youll see theres a lot missing, and a lot of bugs.</th></tr></table><iframe id="ytVid" style="position: absolute; width: 100%; height: 70%;" src="https://www.youtube.com/embed/NhQJ11w4A8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+				
+				modalRegular.style.display = "block";
+				contentFrame.style.display = "none";
+				//title = "test song";
+				//txt = "<br/> Song: test";
+				break;
+			case 20:
+				modal.style.display = "block";
+				//modalRegular.style.display = "block";
+				contentFrame.className = "regularFrame";
+				//modalContent.style.backgroundImage = "url(flowers.jpg)"
+				
+				modalRegular.innerHTML = '<table style="width: 100%; height: 100%;"> <tr style="height: 10%;"> <th></th><th</th> </tr> <tr><th style="width: 25%;"><iframe frameborder="0" src="https://itch.io/embed/273261" width="100%" height="100%"></iframe> </th> <th style="width: 75%;"><div style="position: relative; padding: 2%; text-align: left; font-size: 1vw; font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp; This was a fun little diddy I did that actually originated as a running joke on OneyPlays. The idea was that Worm Odyssey is some obscure landmark in gaming history, so I wanted to make this as if it actually existed and Id found a copy in my uncles garage or something. Ended having a lot of fun designing this.</th></tr></table><iframe id="ytVid" style="position: absolute; width: 100%; height: 70%;" src="https://www.youtube.com/embed/CYE7LBGnI9E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 				
 				modalRegular.style.display = "block";
 				contentFrame.style.display = "none";
