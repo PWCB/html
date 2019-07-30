@@ -224,7 +224,7 @@ function clamp(num, min, max){
 
 if (mobileCheck()){
 	mobile = 1;
-	header.style.fontSize = "4vw";
+	header.style.fontSize = "3.8vw";
 	main.style.fontSize = "32px";
 	colms = (window.innerWidth-btnsize)/btnsize;
 	//side.style.width = "4%";
