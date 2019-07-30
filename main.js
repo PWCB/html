@@ -573,7 +573,7 @@ function step(){
 				modal.style.display = "block";
 				modalRegular.style.display = "block";
 				contentFrame.className = "audioFrame";
-				modalContent.style.backgroundImage = "url(thumbs/worm.jpg)";
+				modalContent.style.backgroundImage = "url(thumbs/worm.png)";
 				modalRegular.innerHTML = '<div style="position: absolute; padding-top: 45vh; padding-left: 33%; text-align: center;"><b>worm 500</b></div>';
 				contentFrame.type = "audio/mpeg";
 				contentFrame.src = "songs/worm500.mp3";
