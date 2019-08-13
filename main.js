@@ -392,39 +392,69 @@ document.ontouchmove = function(){
 /////////////////////////////////////////////////////////////////////////audio muffles when you pull up info
 ///back scrolling chain scrolling overscroll
 
+
+//determine if the machine is slow
+var timeTaken, chugging = 0;
+var start = +new Date();  // cast right now to a number
+
+for (i = 0; i < 1000000; i++)  // Some seriously intensive loop
+{
+    chugging = 1 + chugging*2/1.4142;
+}
+
+timeTaken = (+new Date()) - start;  // calculate the total time taken
+
+if (timeTaken > 100){chugging = 1;}else{chugging = 0;}  // if time taken is longer than 500ms
+console.log("chugger: " + chugging);
+
+
+	
+	
+	
+	
 ////try html5 video
 //step event thing----------------------------------
-var interval = window.setInterval(step, 16);
+var rate = 16, prate = 16;
+var interval = window.setInterval(step, rate);
 
 function step(){
+//	if (prate != rate){
+//		interval = window.setInterval(step, rate);
+//		prate = rate;
+//		console.log("welcome to flavortown");
+//	}
+	if (chugging == 1){interval = window.setInterval(step, 200);}
+
+
 	//grow and shrink buttons
-	
-	//grow the buttons
-	if (dispBtns == 1 && scale < tscale){
-		scale += tscale/6;
-		//scale *= 1.5;
-		scale = clamp(scale, 0, tscale);
-		updateBtnScale();
-		positionGrid();
+	if (dispBtns == 0){
+		//if the buttons are visible and theyre supposed to be shrunken then shrink the buttons
+		if (scale > 0){
+			scale -= tscale/6;
+			//scale /= 1.5;
+			scale = clamp(scale, 0, tscale);
+			updateBtnScale();
+			positionGrid();
+		}else{
+			//organize the buttons when they are fully shrunken
+			//if (scale <= 0){
+				dispBtns = 1;
+				clearGrid();
+				categorizeGrid();
+				shuffle(grid);
+				console.log(grid);
+			//}
+		}
+	}else{
+		//grow the buttons
+		if (scale < tscale){
+			scale += tscale/6;
+			//scale *= 1.5;
+			scale = clamp(scale, 0, tscale);
+			updateBtnScale();
+			positionGrid();
+		}
 	}
-	
-	//if the buttons are visible and theyre supposed to be shrunken then shrink the buttons
-	if (dispBtns == 0 && scale > 0){
-		scale -= tscale/6;
-		//scale /= 1.5;
-		scale = clamp(scale, 0, tscale);
-		updateBtnScale();
-		positionGrid();
-	}
-	
-	if (dispBtns == 0 && scale <= 0){
-		dispBtns = 1;
-		clearGrid();
-		categorizeGrid();
-		shuffle(grid);
-		console.log(grid);
-	}
-	
 	
 	if (itmi != itmiO){
 		var title = "", txt = "";
