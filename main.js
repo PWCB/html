@@ -415,7 +415,7 @@ console.log("chugger: " + chugging);
 ////try html5 video
 //step event thing----------------------------------
 var rate = 16, prate = 16, tweenspd = 10;
-if (chugging == 1){tweenspd = 1;}
+if (chugging == 1){tweenspd = 2;}
 var interval = window.setInterval(step, rate);
 
 function step(){
