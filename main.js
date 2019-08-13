@@ -425,7 +425,6 @@ function step(){
 //	}
 	if (chugging == 1){interval = window.setInterval(step, 200);}
 
-
 	//grow and shrink buttons
 	if (dispBtns == 0){
 		//if the buttons are visible and theyre supposed to be shrunken then shrink the buttons
