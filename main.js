@@ -414,7 +414,8 @@ console.log("chugger: " + chugging);
 	
 ////try html5 video
 //step event thing----------------------------------
-var rate = 16, prate = 16;
+var rate = 16, prate = 16, tweenspd = 10;
+if (chugging == 1){tweenspd = 1;}
 var interval = window.setInterval(step, rate);
 
 function step(){
@@ -423,13 +424,12 @@ function step(){
 //		prate = rate;
 //		console.log("welcome to flavortown");
 //	}
-	if (chugging == 1){interval = window.setInterval(step, 200);}
 
 	//grow and shrink buttons
 	if (dispBtns == 0){
 		//if the buttons are visible and theyre supposed to be shrunken then shrink the buttons
 		if (scale > 0){
-			scale -= tscale/6;
+			scale -= tscale/tweenspd;
 			//scale /= 1.5;
 			scale = clamp(scale, 0, tscale);
 			updateBtnScale();
@@ -447,7 +447,7 @@ function step(){
 	}else{
 		//grow the buttons
 		if (scale < tscale){
-			scale += tscale/6;
+			scale += tscale/tweenspd;
 			//scale *= 1.5;
 			scale = clamp(scale, 0, tscale);
 			updateBtnScale();
@@ -704,7 +704,7 @@ function step(){
 	//modal content tween
 	if (itmi == 0){
 		if (mscale > 0){
-			mscale -= mtscale/10;
+			mscale -= mtscale/tweenspd;
 			modalContent.style.width = mscale + "%";
 			modalContent.style.height = mscale + "%";
 			modalContent.style.left = 10 + 40*(1-mscale/mtscale) + "%";
@@ -715,7 +715,7 @@ function step(){
 		}
 	}else{
 		if (mscale < mtscale){
-			mscale += mtscale/10;
+			mscale += mtscale/tweenspd;
 			modalContent.style.width = mscale + "%";
 			modalContent.style.height = mscale + "%";
 			modalContent.style.left = 10 + 40*(1-mscale/mtscale) + "%";
@@ -726,7 +726,7 @@ function step(){
 	//tween scroll
 	if (scrollPos < scrollTgt-.1 || scrollPos > scrollTgt+.1){
 		scrollTgt = clamp(scrollTgt, 0 - ($(modalInfo).outerHeight(true) - $(modalContent).outerHeight(true))/$(modalContent).outerHeight(true)*100, 100);
-		if (!mobile){scrollPos += (scrollTgt-scrollPos)/10;}
+		if (!mobile){scrollPos += (scrollTgt-scrollPos)/tweenspd;}
 		else{scrollPos += (scrollTgt-scrollPos)/2;}
 		modalInfo.style.top = scrollPos + "%";
 		
