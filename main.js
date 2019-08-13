@@ -423,7 +423,7 @@ function step(){
 //		prate = rate;
 //		console.log("welcome to flavortown");
 //	}
-	if (chugging == 1){interval = window.setInterval(step, 200); itmi = 10;}
+	if (chugging == 1){interval = window.setInterval(step, 200);}
 
 	//grow and shrink buttons
 	if (dispBtns == 0){
