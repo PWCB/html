@@ -59,7 +59,7 @@ for(i = 0; i < bnr.length; i++){
 			bnr[i].style.backgroundColor = "rgba(255,100,0,1.0)";
 			break;
 	}
-	//bnr[i].style.backgroundColor = "rgba(0,100,255,1.0)";
+	bnr[i].style.backgroundColor = "rgba(251, 255, 135,1.0)";
 	//bnr[i].style.backgroundColor = "rgba(255,220,0,1.0)";
 }
 
