@@ -658,6 +658,13 @@ function step(){
 				//title = "test song";
 				//txt = "<br/> Song: test";
 				break;
+			case 21:
+				modal.style.display = "block";
+				contentFrame.className = "videoFrame";
+				contentFrame.src = "pipe.mp4";
+				title = "Pipe Dreams";
+				txt = "<br/> ";
+				break;
 /*			case 19:
 				modal.style.display = "block";
 				//modalRegular.style.display = "block";
