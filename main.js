@@ -39,7 +39,7 @@ musiclnk = document.getElementById('music');
 //reset hidden items
 header.fontSize = "24px";
 footer.fontSize = "12px";
-icon.width = "100%";
+side.width = "1cm";
 document.title = "Patrick Brock";
 
 //button stuff---------------------------------------------
