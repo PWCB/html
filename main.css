@@ -41,7 +41,7 @@ body{
 }
 .side{
 	position: fixed;
-	width: 0;
+	width: 0cm;
 	height: 25%;
 	z-index: 2;
 	right: 2%;
