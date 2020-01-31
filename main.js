@@ -36,6 +36,8 @@ artlnk = document.getElementById('art'),
 gameslnk = document.getElementById('games'),
 musiclnk = document.getElementById('music');
 
+header.fontSize = 24px;
+
 //button stuff---------------------------------------------
 var btn = new Array(itmimax);
 btn = document.getElementsByClassName("itmbtn");
