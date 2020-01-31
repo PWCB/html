@@ -38,6 +38,7 @@ musiclnk = document.getElementById('music');
 
 //reset hidden items
 header.fontSize = "24px";
+footer.fontSize = "12px";
 
 //button stuff---------------------------------------------
 var btn = new Array(itmimax);
