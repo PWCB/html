@@ -40,6 +40,7 @@ musiclnk = document.getElementById('music');
 header.fontSize = "24px";
 footer.fontSize = "12px";
 icon.width = "100%";
+document.title = "Patrick Brock";
 
 //button stuff---------------------------------------------
 var btn = new Array(itmimax);
