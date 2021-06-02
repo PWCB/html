@@ -4,5 +4,4 @@ if (window.location.href== "http://178.128.11.125/") {
 
 if (window.location.href== "http://cornsquares.com/" || window.location.href== "http://cornsquares.com/index.html") {
 	window.location.href = 'http://cornsquares.com/cornsquares.html'; 
-	history.pushState(history.state, 'Corn Squares', 'http://cornsquares.com/');
 }
